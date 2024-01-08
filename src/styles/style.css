@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  /* font-family: 'Permanent Marker', cursive; */
+}
+
+::root {
+  --primary: #365486;
+  --secondary: #dcf2f1;
+  --optional: #7fc7d9;
+}
+
+body {
+  background-color: #dcf2f1;
+}
+
+.app-notes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-notes {
+  width: 100%;
+  background-color: #365486;
+  display: flex;
+  padding: 0.8em 5em;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-notes__title {
+  color: white;
+}
+
+.header-notes .search-notes__form input {
+  width: 300px;
+  padding: 1em 0.4em;
+}
+
+/* Tambah Catatan */
+.add-notes__form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  gap: 0.2em;
+  padding: 0.8em 11em;
+  margin-top: 1em;
+}
+
+.add-notes__title {
+  height: 4em;
+  padding: 0.2em 2em;
+}
+
+.add-notes__body {
+  height: 13em;
+  padding: 1em 2em;
+}
+
+.btn-submit {
+  padding: 0.6em 2em;
+  background-color: #365486;
+  color: white;
+  font-weight: 500;
+  border: 0px;
+  border-radius: 4px;
+}
+/* Catatan Aktif */
+.list-notes {
+  width: 100%;
+  padding: 1em 4em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-notes__title {
+  margin-top: 1em;
+  text-align: center;
+}
+
+.list-notes .notes-card {
+  background-color: #7fc7d9;
+
+  border-radius: 0.5em;
+}
+
+.list-notes .notes-card .card-item {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 230px;
+  gap: 0.6em;
+}
+
+.btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-delete {
+  width: 90%;
+  padding: 0.7em 0.5em;
+  background-color: red;
+  color: white;
+  border: 0px;
+  font-weight: 500;
+  border-radius: 0.3em;
+}
+
+.btn-archive {
+  width: 90%;
+  padding: 0.5em;
+  background-color: #365486;
+  color: white;
+  border: 0px;
+  font-weight: 500;
+  border-radius: 0.3em;
+}

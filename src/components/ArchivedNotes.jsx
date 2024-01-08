@@ -4,12 +4,12 @@ import React from "react";
 import NotesCard from "./NotesCard";
 
 export default function ListNotes({ notes, onDelete, onArchive }) {
-  const activeNotes = notes.filter((note) => !note.archived);
+  const archivedNotes = notes.filter((note) => note.archived);
 
   return (
     <div className="list-notes">
-      {activeNotes.length > 0 ? (
-        activeNotes.map((note) => (
+      {archivedNotes.length > 0 ? (
+        archivedNotes.map((note) => (
           <NotesCard
             key={note.id}
             id={note.id}
@@ -19,7 +19,7 @@ export default function ListNotes({ notes, onDelete, onArchive }) {
           />
         ))
       ) : (
-        <p>Tidak ada catatan</p>
+        <p>Tidak Ada Catatan Yang Diarsipkan</p>
       )}
     </div>
   );

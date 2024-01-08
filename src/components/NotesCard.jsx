@@ -1,12 +1,23 @@
-// eslint-disable-next-line no-unused-vars
-import React from "react";
+/* eslint-disable react/prop-types */
 import ItemCard from "./ItemCard";
+import DeleteButton from "./DeleteButton";
+import ArchiveButton from "./ArchiveButton";
 
-// eslint-disable-next-line react/prop-types
-export default function NotesCard({ title, createdAt, body }) {
+export default function NotesCard({
+  title,
+  body,
+  createdAt,
+  id,
+  onDelete,
+  onArchive,
+}) {
   return (
     <div className="notes-card">
       <ItemCard title={title} createdAt={createdAt} body={body} />
+      <div className="btn">
+        <DeleteButton id={id} onDelete={onDelete} />
+        <ArchiveButton id={id} onArchive={onArchive} />
+      </div>
     </div>
   );
 }
