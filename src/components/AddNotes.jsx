@@ -19,10 +19,11 @@ export default class AddNotes extends React.Component {
   }
 
   onTitleChangedEventHandler(event) {
-    this.setState(() => {
-      return {
-        title: event.target.value,
-      };
+    const inputTitle = event.target.value;
+    const trimmedTitle = inputTitle.slice(0, 50);
+
+    this.setState({
+      title: trimmedTitle,
     });
   }
 
@@ -40,25 +41,33 @@ export default class AddNotes extends React.Component {
   }
 
   render() {
+    const { title, body } = this.state;
+    const titleCount = title.length;
+
     return (
-      <form className="add-notes__form" onSubmit={this.onSubmitEventHandler}>
-        <input
-          type="text"
-          placeholder="Masukkan Judul Catatan..."
-          className="add-notes__title"
-          value={this.state.title}
-          onChange={this.onTitleChangedEventHandler}
-        />
-        <textarea
-          className="add-notes__body"
-          placeholder="Masukkan Isi Catatan..."
-          value={this.state.body}
-          onChange={this.onBodyChangedEventHandler}
-        />
-        <button type="submit" className="btn-submit">
-          Tambah Catatan
-        </button>
-      </form>
+      <>
+        <div>
+          <p>Sisa Karakter: {titleCount}/50</p>
+        </div>
+        <form className="add-notes__form" onSubmit={this.onSubmitEventHandler}>
+          <input
+            type="text"
+            placeholder="Masukkan Judul Catatan..."
+            className="add-notes__title"
+            value={title}
+            onChange={this.onTitleChangedEventHandler}
+          />
+          <textarea
+            className="add-notes__body"
+            placeholder="Masukkan Isi Catatan..."
+            value={body}
+            onChange={this.onBodyChangedEventHandler}
+          />
+          <button type="submit" className="btn-submit">
+            Tambah Catatan
+          </button>
+        </form>
+      </>
     );
   }
 }

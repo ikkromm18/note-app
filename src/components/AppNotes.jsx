@@ -29,13 +29,12 @@ class AppNotes extends React.Component {
             id: +new Date(),
             title,
             body,
-            createdAt: new Date().toISOString,
+            createdAt: new Date().toISOString(),
             archived: false,
           },
         ],
       };
     });
-    console.log(this.state.notes);
   }
 
   onDeleteNotesHandler(id) {
@@ -51,7 +50,6 @@ class AppNotes extends React.Component {
       return note;
     });
     this.setState({ notes: Archivednotes });
-    console.log(this.state.notes);
   }
 
   onActiveNotesHandler(id) {

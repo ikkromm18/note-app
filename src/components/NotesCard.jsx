@@ -10,13 +10,14 @@ export default function NotesCard({
   id,
   onDelete,
   onArchive,
+  archived,
 }) {
   return (
     <div className="notes-card">
       <ItemCard title={title} createdAt={createdAt} body={body} />
       <div className="btn">
         <DeleteButton id={id} onDelete={onDelete} />
-        <ArchiveButton id={id} onArchive={onArchive} />
+        <ArchiveButton id={id} onArchive={onArchive} archived={archived} />
       </div>
     </div>
   );

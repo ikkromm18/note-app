@@ -15,6 +15,7 @@ export default function ListNotes({ notes, onDelete, onArchive }) {
             id={note.id}
             onDelete={onDelete}
             onArchive={onArchive}
+            archived={note.archived}
             {...note}
           />
         ))
